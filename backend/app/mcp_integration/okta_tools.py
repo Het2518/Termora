@@ -1,5 +1,5 @@
 """
-FinePrint — Okta MCP Tool Wrappers
+Termora — Okta MCP Tool Wrappers
 Fetches usage/login data per vendor app.
 Optional — Risk Agent degrades gracefully when unavailable (FR-RISK-3).
 """

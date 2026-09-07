@@ -1,5 +1,5 @@
 """
-FinePrint — User Model
+Termora — User Model
 Supports Org Admin, standard user, and read-only viewer roles (RBAC).
 """
 

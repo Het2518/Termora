@@ -1,2 +1,2 @@
-# FinePrint — MCP Package
+# Termora — MCP Package
 from app.mcp_integration.client_manager import mcp_client_manager

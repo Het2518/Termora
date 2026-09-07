@@ -1,5 +1,5 @@
 """
-FinePrint — MCP Connection API Router
+Termora — MCP Connection API Router
 Manages external MCP server connections (Google Drive, Gmail, Slack, Okta).
 """
 

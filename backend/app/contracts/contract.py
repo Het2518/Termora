@@ -1,5 +1,5 @@
 """
-FinePrint — Contract Model
+Termora — Contract Model
 Stores raw contract document data after ingestion from Drive/Gmail/manual upload.
 """
 

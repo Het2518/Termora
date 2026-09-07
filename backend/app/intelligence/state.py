@@ -1,5 +1,5 @@
 """
-FinePrint — LangGraph State Definition
+Termora — LangGraph State Definition
 The ContractScanState TypedDict flows through every node in the graph.
 All agent outputs accumulate here and are checkpointed to Postgres between nodes.
 

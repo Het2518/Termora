@@ -1,5 +1,5 @@
 """
-FinePrint — Gmail MCP Tool Wrappers
+Termora — Gmail MCP Tool Wrappers
 Exposes search_emails and get_attachment operations.
 """
 

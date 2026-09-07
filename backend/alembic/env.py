@@ -1,5 +1,5 @@
 """
-FinePrint — Alembic env.py
+Termora — Alembic env.py
 Configured to use our SQLAlchemy models for autogenerate.
 """
 

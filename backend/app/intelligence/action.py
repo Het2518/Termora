@@ -1,5 +1,5 @@
 """
-FinePrint — Action Agent
+Termora — Action Agent
 Drafts action artifacts (emails, Slack messages) after human approval.
 NEVER sends autonomously — only creates draft stored in DB for human confirmation (FR-ACT-2).
 """

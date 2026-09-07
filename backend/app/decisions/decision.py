@@ -1,5 +1,5 @@
 """
-FinePrint — Decision Model
+Termora — Decision Model
 The structured recommendation object synthesized from all agent outputs.
 Contains both the LLM-generated content and the deterministic rule layer output.
 """

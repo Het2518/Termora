@@ -1,5 +1,5 @@
 """
-FinePrint — Vendor Intelligence API
+Termora — Vendor Intelligence API
 Cross-contract analytics per vendor: total spend, contract count, risk breakdown, renewal timeline.
 """
 

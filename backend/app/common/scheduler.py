@@ -1,5 +1,5 @@
 """
-FinePrint — Ingestion Scheduler
+Termora — Ingestion Scheduler
 Runs periodically to trigger MCP polling for each organization.
 """
 import logging

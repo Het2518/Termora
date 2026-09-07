@@ -1,5 +1,5 @@
 """
-FinePrint — Actions API Router
+Termora — Actions API Router
 View draft actions and trigger human-confirmed sending via MCP.
 """
 
@@ -132,7 +132,7 @@ def _execute_via_mcp(action: Action, user: User, db: Session) -> str:
 
     elif action.action_type.value == "slack_alert":
         channel = payload.get("channel", "#general")
-        text = payload.get("body", "Contract alert from FinePrint")
+        text = payload.get("body", "Contract alert from Termora")
         slack_tools.post_message(str(user.org_id), channel, text, db)
         return "slack_mcp"
 

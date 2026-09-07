@@ -1,5 +1,5 @@
 """
-FinePrint — Webhook API
+Termora — Webhook API
 Lets orgs register outbound HTTP webhooks to receive events when decisions are made,
 approved, or rejected — without needing MCP or polling.
 """
@@ -141,7 +141,7 @@ def test_webhook(
         raise HTTPException(status_code=404, detail="Webhook not found.")
     background_tasks.add_task(_fire_webhook_sync, str(wh.id), wh.url, {
         "event": "webhook.test",
-        "message": "This is a test ping from FinePrint.",
+        "message": "This is a test ping from Termora.",
         "fired_at": datetime.now(timezone.utc).isoformat(),
     }, db)
     return {"message": f"Test ping queued to {wh.url}"}

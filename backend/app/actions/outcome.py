@@ -1,5 +1,5 @@
 """
-FinePrint — Outcome Model
+Termora — Outcome Model
 Records the verified real-world result of an executed action.
 Compared against the decision's expected_impact to classify success/failure.
 """

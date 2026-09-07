@@ -1,5 +1,5 @@
 """
-FinePrint — Audit Log API Router
+Termora — Audit Log API Router
 Exposes the immutable audit trail for frontend consumption.
 Supports optional filtering by contract_id to power the Contract Detail timeline.
 """

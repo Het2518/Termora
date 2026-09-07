@@ -78,7 +78,7 @@ export default function Sidebar({ collapsed, onToggle }) {
   }, []);
 
   const logout = () => {
-    localStorage.removeItem("fineprint_token");
+    localStorage.removeItem("Termora_token");
     router.push("/login");
   };
 
@@ -139,7 +139,7 @@ export default function Sidebar({ collapsed, onToggle }) {
                 whiteSpace: "nowrap",
               }}
             >
-              FinePrint
+              Termora
             </p>
             <p
               style={{

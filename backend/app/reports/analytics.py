@@ -1,5 +1,5 @@
 """
-FinePrint — Analytics API
+Termora — Analytics API
 Provides outcome ROI data and risk trend time-series for the analytics dashboard.
 """
 

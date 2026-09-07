@@ -1,5 +1,5 @@
 """
-FinePrint — LangGraph Orchestrator
+Termora — LangGraph Orchestrator
 Sequential pipeline (no parallel fan-out) to avoid INVALID_CONCURRENT_GRAPH_UPDATE.
 
 Graph flow:
@@ -97,7 +97,7 @@ def route_after_rules(state: ContractScanState) -> str:
 # ── Graph Assembly ─────────────────────────────────────────────────────────────
 
 def build_graph() -> StateGraph:
-    """Builds and compiles the FinePrint LangGraph sequential pipeline."""
+    """Builds and compiles the Termora LangGraph sequential pipeline."""
     graph = StateGraph(ContractScanState)
 
     # Add all nodes
@@ -149,4 +149,4 @@ def build_graph() -> StateGraph:
 
 
 # Singleton compiled graph — imported by the contracts API
-fineprint_graph = build_graph()
+Termora_graph = build_graph()

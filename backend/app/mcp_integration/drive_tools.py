@@ -1,5 +1,5 @@
 """
-FinePrint — Google Drive MCP Tool Wrappers
+Termora — Google Drive MCP Tool Wrappers
 Exposes list_files and read_file operations via the MCP Client Manager.
 All tool calls are logged for the audit trail (FR-DASH-4, NFR-5).
 """

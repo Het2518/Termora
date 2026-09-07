@@ -1,5 +1,5 @@
 """
-FinePrint — Notifications API
+Termora — Notifications API
 In-app notification feed: new contracts, approvals needed, and verification results.
 """
 

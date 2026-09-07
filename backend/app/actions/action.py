@@ -1,5 +1,5 @@
 """
-FinePrint — Action Model
+Termora — Action Model
 Stores draft artifacts (emails, Slack messages) generated after decision approval.
 Tracks the specific MCP tool call used when a human confirms "send".
 """

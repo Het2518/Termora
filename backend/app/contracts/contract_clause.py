@@ -1,5 +1,5 @@
 """
-FinePrint — Contract Clause Model
+Termora — Contract Clause Model
 Structured output from the Detection Agent for a given contract.
 Stores all key fields extracted from the raw contract text via LLM.
 """

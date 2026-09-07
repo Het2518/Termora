@@ -1,6 +1,6 @@
 INDEPENDENT CONTRACTOR AGREEMENT
 
-This Agreement is entered into by FinePrint Corp ("Company") and Jane Doe ("Contractor").
+This Agreement is entered into by Termora Corp ("Company") and Jane Doe ("Contractor").
 
 1. SERVICES
 Contractor agrees to provide frontend UI/UX design services on a freelance basis.

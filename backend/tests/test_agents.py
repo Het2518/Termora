@@ -1,5 +1,5 @@
 """
-FinePrint — Unit Tests
+Termora — Unit Tests
 pytest suite for agents, rules, and API routes.
 Run: cd backend && pytest tests/ -v
 """

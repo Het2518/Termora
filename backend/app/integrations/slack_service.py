@@ -28,7 +28,7 @@ def send_slack_approval_request(org_id: str, contract_id: str, decision_details:
     
     msg = f"""*High-Risk Contract Detected: {vendor}* :warning:
     
-The FinePrint AI pipeline has recommended an action that requires human approval.
+The Termora AI pipeline has recommended an action that requires human approval.
 *Recommended Action*: {action.upper()}
 *Estimated Savings*: ${savings:,.2f}
 
@@ -49,7 +49,7 @@ def send_slack_action_draft(org_id: str, action_details: dict):
     contract_id = action_details.get("contract_id", "")
     type = action_details.get("type", "")
     
-    msg = f"""*FinePrint Action Executed* :white_check_mark:
+    msg = f"""*Termora Action Executed* :white_check_mark:
     
 A {type.upper()} action was just approved and executed for contract `{contract_id}`.
 The outcome verification job will automatically check this vendor's usage in 30 days to confirm the financial impact.

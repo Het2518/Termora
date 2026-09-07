@@ -1,6 +1,6 @@
 MASTER HOSTING AND INFRASTRUCTURE AGREEMENT
 
-This Agreement is made by and between FinePrint Corp ("Customer") and GlobalDataHost Limited, a company registered in the Republic of Seychelles ("Host").
+This Agreement is made by and between Termora Corp ("Customer") and GlobalDataHost Limited, a company registered in the Republic of Seychelles ("Host").
 
 1. SERVICES
 Host shall provide dedicated server infrastructure and network connectivity.

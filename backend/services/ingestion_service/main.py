@@ -1,5 +1,5 @@
 """
-FinePrint — Ingestion Service
+Termora — Ingestion Service
 A standalone FastAPI microservice that handles document parsing,
 deduplication, and the periodic scan schedule. Separate from the
 API Gateway so ingestion load doesn't block request handling.
@@ -29,7 +29,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="FinePrint Ingestion Service",
+    title="Termora Ingestion Service",
     description="Document parsing, deduplication & periodic ingestion microservice",
     version="1.0.0",
     docs_url="/docs",
@@ -47,7 +47,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "service": "FinePrint Ingestion Service"}
+    return {"status": "ok", "service": "Termora Ingestion Service"}
 
 
 @app.post("/parse")

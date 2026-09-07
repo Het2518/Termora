@@ -1,5 +1,5 @@
 """
-FinePrint — Ingestion Service
+Termora — Ingestion Service
 Polls configured MCP servers (Google Drive / Gmail) for new contracts,
 deduplicates them, extracts text, and triggers the AI pipeline.
 """

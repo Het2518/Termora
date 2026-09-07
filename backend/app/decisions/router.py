@@ -1,5 +1,5 @@
 """
-FinePrint — Decisions API Router
+Termora — Decisions API Router
 Approval queue and approve/reject endpoints.
 Human approval resumes the LangGraph pipeline (FR-APP-2, FR-APP-3).
 """

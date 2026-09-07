@@ -1,5 +1,5 @@
 """
-FinePrint — Dashboard API Router
+Termora — Dashboard API Router
 Aggregated metrics for the main dashboard view.
 """
 

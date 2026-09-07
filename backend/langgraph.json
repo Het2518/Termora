@@ -1,7 +1,7 @@
 {
   "dependencies": ["."],
   "graphs": {
-    "fineprint_graph": "./app/orchestrator/graph.py:fineprint_graph"
+    "Termora_graph": "./app/orchestrator/graph.py:Termora_graph"
   },
   "env": ".env"
 }

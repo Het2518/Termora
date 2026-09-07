@@ -1,5 +1,5 @@
 """
-FinePrint — Document Parser
+Termora — Document Parser
 Converts raw file bytes (PDF/DOCX) to plain text.
 Includes OCR fallback for scanned/image-based PDFs (FR-ING-4).
 """

@@ -1,5 +1,5 @@
 """
-FinePrint — MCP Credential Encryption Utilities
+Termora — MCP Credential Encryption Utilities
 Encrypts/decrypts MCP connection credentials at rest using AES-256.
 Credentials are NEVER stored in plaintext — NFR-4 / B.6 compliance.
 """

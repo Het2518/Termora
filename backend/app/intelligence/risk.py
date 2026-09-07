@@ -1,5 +1,5 @@
 """
-FinePrint — Risk Agent
+Termora — Risk Agent
 Classifies contract risk using extracted clauses + optional Okta usage signals.
 Never fabricates usage data when Okta MCP is unavailable (FR-RISK-3).
 """

@@ -1,5 +1,5 @@
 """
-FinePrint — FastAPI Application Entrypoint
+Termora — FastAPI Application Entrypoint
 """
 
 import threading
@@ -19,8 +19,8 @@ def get_scheduler() -> BackgroundScheduler:
     url = urllib.parse.urlparse(settings.redis_url)
     jobstores = {
         "default": RedisJobStore(
-            jobs_key="fineprint_jobs",
-            run_times_key="fineprint_running",
+            jobs_key="Termora_jobs",
+            run_times_key="Termora_running",
             host=url.hostname or "localhost",
             port=url.port or 6379,
             db=int(url.path[1:]) if url.path and len(url.path) > 1 else 0,
@@ -50,7 +50,7 @@ async def lifespan(app: FastAPI):
     scheduler.shutdown()
 
 app = FastAPI(
-    title="FinePrint API",
+    title="Termora API",
     description="AI Agent Pipeline for SaaS & Vendor Contract Risk Monitoring",
     version="1.0.0",
     docs_url="/docs",
@@ -71,7 +71,7 @@ app.add_middleware(
 
 @app.get("/health", tags=["Health"])
 def health_check():
-    return {"status": "ok", "service": "FinePrint API"}
+    return {"status": "ok", "service": "Termora API"}
 
 
 from app.users.auth_router import router as auth_router

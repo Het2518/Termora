@@ -1,5 +1,5 @@
 """
-FinePrint — Decision Agent (ChromaDB-powered RAG)
+Termora — Decision Agent (ChromaDB-powered RAG)
 Synthesizes Detection, Risk, and Finance agent outputs into a recommendation.
 Uses ChromaDB for semantic retrieval of past successful decisions.
 """
@@ -50,7 +50,7 @@ def _get_chroma_collection():
     )
 
     _chroma_collection = _chroma_client.get_or_create_collection(
-        name="fineprint_decisions",
+        name="Termora_decisions",
         embedding_function=ef,
         metadata={"hnsw:space": "cosine"},
     )

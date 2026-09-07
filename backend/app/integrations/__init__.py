@@ -1,1 +1,1 @@
-"""FinePrint services package."""
+"""Termora services package."""

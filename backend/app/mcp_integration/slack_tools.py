@@ -1,5 +1,5 @@
 """
-FinePrint — Slack MCP Tool Wrappers
+Termora — Slack MCP Tool Wrappers
 Used for approval notifications and action delivery.
 NEVER called autonomously — only after explicit human approval (FR-ACT-2).
 """

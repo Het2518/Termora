@@ -1,5 +1,5 @@
 """
-FinePrint — OrgSettings API Router
+Termora — OrgSettings API Router
 Allows Org Admins to configure business rules, thresholds, and display preferences.
 """
 

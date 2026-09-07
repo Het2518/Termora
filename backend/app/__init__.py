@@ -1,1 +1,1 @@
-# FinePrint — App Package
+# Termora — App Package

@@ -1,5 +1,5 @@
 """
-FinePrint — Deterministic Rule Layer
+Termora — Deterministic Rule Layer
 Sets requires_human_approval based on org-configured thresholds.
 This is pure Python — no LLM, no MCP, no external calls. (FR-DEC-2)
 Lives entirely outside the agent reasoning path to prevent any LLM influence on approval routing.

@@ -1,5 +1,5 @@
 """
-FinePrint — Detection Agent
+Termora — Detection Agent
 Extracts structured contract clauses from raw text using Groq LLM.
 Robust JSON extraction that works with any model including Qwen (think-tag aware).
 Routes to manual_review if confidence < threshold (FR-DET-3).

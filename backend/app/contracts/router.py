@@ -1,5 +1,5 @@
 """
-FinePrint — Contracts API Router
+Termora — Contracts API Router
 Full CRUD + scan trigger + manual upload endpoints.
 All queries are scoped to the authenticated user's org_id (B.6 multi-tenancy).
 """
@@ -262,7 +262,7 @@ def delete_contract(
 def _run_pipeline(contract_id: str, org_id: str, user_email: str):
     """Background task that runs the LangGraph pipeline for a contract."""
     from app.core.database import SessionLocal
-    from app.intelligence.graph import fineprint_graph
+    from app.intelligence.graph import Termora_graph
 
     db = SessionLocal()
     try:
@@ -287,7 +287,7 @@ def _run_pipeline(contract_id: str, org_id: str, user_email: str):
             "route": "continue",
         }
 
-        result = fineprint_graph.invoke(initial_state, config={"thread_id": contract_id})
+        result = Termora_graph.invoke(initial_state, config={"thread_id": contract_id})
 
         # Persist results to DB
         _persist_pipeline_results(contract, result, db, user_email)

@@ -1,5 +1,5 @@
 """
-FinePrint — Renewal Calendar API
+Termora — Renewal Calendar API
 Returns upcoming contract renewals grouped by urgency bucket (30/60/90+ days).
 Used by the /renewals frontend page.
 """

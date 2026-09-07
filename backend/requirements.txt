@@ -1,5 +1,5 @@
 # ============================================================
-# FinePrint — Backend Python Dependencies
+# Termora — Backend Python Dependencies
 # ============================================================
 
 # --- Web Framework ---

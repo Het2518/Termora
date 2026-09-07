@@ -1,5 +1,5 @@
 """
-FinePrint — Data Retention Jobs
+Termora — Data Retention Jobs
 Deletes data older than the configured retention period (FR: 24 months for audit logs).
 """
 

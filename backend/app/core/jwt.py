@@ -1,5 +1,5 @@
 """
-FinePrint — JWT Authentication
+Termora — JWT Authentication
 Handles token creation, validation, and current user extraction.
 """
 

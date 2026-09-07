@@ -1,5 +1,5 @@
 """
-FinePrint — Database Engine & Session Management
+Termora — Database Engine & Session Management
 Uses SQLAlchemy 2.0 async-compatible engine with per-request session scoping.
 All queries MUST go through get_db() dependency to ensure org_id scoping.
 """

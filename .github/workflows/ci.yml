@@ -19,7 +19,7 @@ jobs:
 
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || 'test-key' }}
-      DATABASE_URL: postgresql://fineprint:fineprint_secret@localhost:5432/fineprint_db
+      DATABASE_URL: postgresql://Termora:Termora_secret@localhost:5432/Termora_db
       SECRET_KEY: ci-test-secret-key
       MOCK_MCP: "true"
 
@@ -27,9 +27,9 @@ jobs:
       postgres:
         image: postgres:16-alpine
         env:
-          POSTGRES_USER: fineprint
-          POSTGRES_PASSWORD: fineprint_secret
-          POSTGRES_DB: fineprint_db
+          POSTGRES_USER: Termora
+          POSTGRES_PASSWORD: Termora_secret
+          POSTGRES_DB: Termora_db
         ports:
           - 5432:5432
         options: >-

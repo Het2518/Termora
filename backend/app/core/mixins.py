@@ -1,5 +1,5 @@
 """
-FinePrint — Shared Model Mixin
+Termora — Shared Model Mixin
 Provides id (UUID), created_at for all models.
 """
 

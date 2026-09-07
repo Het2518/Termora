@@ -1,6 +1,6 @@
 ENTERPRISE CLOUD SOFTWARE AGREEMENT
 
-This Agreement is between FinePrint Corp ("Customer") and CloudScale SaaS Solutions ("Provider").
+This Agreement is between Termora Corp ("Customer") and CloudScale SaaS Solutions ("Provider").
 
 1. SUBSCRIPTION SERVICES
 Provider grants Customer a limited, non-transferable license to access the CloudScale CRM platform for 500 users.

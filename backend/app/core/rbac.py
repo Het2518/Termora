@@ -1,5 +1,5 @@
 """
-FinePrint — RBAC (Role-Based Access Control)
+Termora — RBAC (Role-Based Access Control)
 Provides FastAPI dependencies for role enforcement.
 """
 

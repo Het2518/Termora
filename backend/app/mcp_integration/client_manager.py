@@ -1,5 +1,5 @@
 """
-FinePrint — MCP Client Manager
+Termora — MCP Client Manager
 Manages per-org MCP server sessions.
 Handles session lifecycle: connect, verify, disconnect.
 When MOCK_MCP=true, returns stub clients without live credentials.

@@ -1,5 +1,5 @@
 """
-FinePrint — Auth API Router
+Termora — Auth API Router
 Registration, login, and current user endpoints.
 """
 

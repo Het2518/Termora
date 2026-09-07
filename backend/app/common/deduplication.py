@@ -1,5 +1,5 @@
 """
-FinePrint — Deduplication
+Termora — Deduplication
 Prevents redundant contract processing using SHA-256 file hashing.
 A file is a duplicate if it has the same source_file_id + file_hash.
 If the hash differs (updated file), it triggers a re-scan.
