@@ -1,108 +1,626 @@
-# FinePrint 📜
+# Termora
 
-**FinePrint** is an **AI-powered contract risk monitoring, decisioning, and automated governance platform.**
+### Turn contracts into controlled decisions.
 
-It acts as a digital legal and compliance assistant that autonomously ingests contracts, analyzes them for hidden risks (like auto-renewals, predatory termination penalties, and weak SLAs), estimates financial exposure, and recommends mitigating actions. Crucially, it blends **probabilistic AI analysis** with a **deterministic policy rule engine** to enforce human-in-the-loop (HITL) approvals before any action is executed.
+**Termora** is an AI-powered contract intelligence and governance platform that continuously identifies contractual risk, estimates financial exposure, and recommends actions — while deterministic policies and human approvals control what happens next.
 
----
+Contracts don't just contain information. They contain **financial commitments, operational dependencies, deadlines, penalties, and risks**.
 
-## 🎯 Core Concept & Problem Solved
-
-**The Problem:** Enterprises lose millions annually to "gotcha" clauses in vendor contracts—auto-renewals that trigger unnoticed, SLA breaches that go unpenalized, and predatory termination fees. Legal teams don't have the bandwidth to constantly monitor every signed contract.
-
-**The Solution:** FinePrint acts as an always-on contract intelligence layer.
-
-1. **Analyze:** AI reads the contract and flags risks.
-2. **Decide:** It proposes an action (e.g., "Draft an email to renegotiate the SaaS auto-renewal").
-3. **Govern:** A deterministic rule engine checks the financial impact against organization policies. If the impact exceeds a threshold (e.g., $5,000), it halts execution and requires human approval.
-4. **Execute:** Once approved, it uses Model Context Protocol (MCP) integrations to actually draft the Slack message or email.
+Termora turns those contracts into **actionable, governed decisions**.
 
 ---
 
-## 🏗️ System Architecture & Tech Stack
+## The Problem
 
-FinePrint is a modern, decoupled web application.
+Enterprise teams sign thousands of contracts, but most contracts are effectively forgotten after signature.
 
-### Tech Stack Diagram
+Important clauses can remain buried inside hundreds of pages:
 
-![Tech Stack Diagram](./assets/tech_stack.png)
+* Auto-renewal deadlines
+* Early termination penalties
+* Weak SLA commitments
+* Price escalation clauses
+* Hidden financial obligations
+* Renewal notice periods
+* Liability limitations
+* Unfavorable termination conditions
 
-### Stack Breakdown
+Legal and procurement teams cannot manually monitor every contract continuously.
 
-- **Frontend:** Next.js 14, React, Tailwind CSS. Custom "Premium GitHub-style" UI with light/dark modes.
-- **Backend:** FastAPI (Python), SQLAlchemy ORM, Pydantic for validation.
-- **AI / Agents:** LangGraph (for multi-agent workflows) and LangChain.
-- **Integrations:** Model Context Protocol (MCP) allows the AI to securely connect to external tools without hardcoding API integrations.
+The result is expensive surprises.
 
----
-
-## 🔄 How the Flow Works (In-Depth)
-
-The lifecycle of a contract in FinePrint follows a strict pipeline to ensure AI safety and determinism.
-
-### High-Level Flow Diagram
-
-![High-Level Flow Diagram](./assets/high_level_flow.png)
+**Termora provides an always-on intelligence layer over the contract portfolio.**
 
 ---
 
-## 🧩 Detailed Pipeline Execution (Activity Diagram)
+## What Termora Does
 
-The core "brain" of the application is a LangGraph state machine. It doesn't just make a single LLM call; it routes through specific specialized nodes.
+Termora follows a simple principle:
 
-![Activity Diagram](./assets/activity_diagram.png)
+> **AI understands. Policies govern. Humans decide. Systems execute.**
+
+### 1. Understand
+
+Termora ingests contracts and uses AI to extract:
+
+* Parties
+* Contract value
+* Effective dates
+* Renewal dates
+* Payment obligations
+* Termination conditions
+* SLAs
+* Penalties
+* Risk clauses
+* Important contractual obligations
+
+### 2. Detect
+
+AI analyzes the extracted contract information and identifies potential risks.
+
+For example:
+
+> **High Risk — Early Termination**
+
+> Clause 4 requires the customer to pay the remaining contract balance plus a 30% termination penalty.
+
+Termora doesn't simply flag the clause.
+
+It evaluates its potential **business and financial impact**.
+
+### 3. Decide
+
+The AI generates a structured recommendation.
+
+Example:
+
+```text
+Risk:
+Predatory early termination clause
+
+Estimated Exposure:
+$45,000
+
+Recommended Action:
+Renegotiate termination terms
+
+Priority:
+High
+```
+
+### 4. Govern
+
+This is where Termora differs from a traditional AI contract analyzer.
+
+AI recommendations are **not automatically trusted**.
+
+A deterministic policy engine evaluates the recommendation against organizational rules.
+
+Example:
+
+```text
+Estimated Impact:     $45,000
+Approval Threshold:   $5,000
+
+$45,000 > $5,000
+
+Result:
+REQUIRES HUMAN APPROVAL
+```
+
+The policy engine, not the LLM, determines whether an action can proceed.
+
+### 5. Execute
+
+Once an authorized person approves the recommendation, Termora can generate and execute downstream actions through integrated tools.
+
+For example:
+
+* Draft a Slack notification
+* Draft an email to a vendor
+* Create a procurement task
+* Create a legal review request
+* Notify an internal stakeholder
+
+Execution happens only after the appropriate governance checks have passed.
 
 ---
 
-## 🗄️ Database Architecture (Entity Relationship Diagram)
+# Why Termora?
 
-![Database Diagram](./assets/database_diagram.png)
+Most contract AI products focus primarily on **finding information**.
 
----
+Termora focuses on what happens **after information is found**.
 
-## 📖 Walkthrough Example: "The Predatory Marketing Contract"
+| Traditional Contract AI | Termora                      |
+| ----------------------- | ---------------------------- |
+| Extracts clauses        | Extracts + evaluates clauses |
+| Finds risks             | Quantifies potential impact  |
+| Provides summaries      | Recommends decisions         |
+| AI-driven               | AI + deterministic policies  |
+| Manual follow-up        | Governed workflows           |
+| Passive analysis        | Continuous monitoring        |
+| Information retrieval   | Decision + action lifecycle  |
 
-Let's walk through exactly how the system handles a high-risk contract.
+Termora is designed to bridge the gap between:
 
-### Step 1: Ingestion
-
-- A user uploads `high_risk_marketing_vendor.pdf` via the Dashboard.
-- The `AuditLog` records: `Contract uploaded: high_risk_marketing_vendor.pdf`.
-
-### Step 2: LangGraph AI Pipeline
-
-- **Extraction Node**: Identifies the vendor as "Global Marketing Dynamics LLC" and an annual value of $150,000.
-- **Risk Analysis Node**: Finds Clause 4: *"Client shall immediately pay the full remaining balance plus a 30% early termination penalty."* The AI flags this as **High Risk**.
-- **Decision Node**: Formulates a situation report: "Contract contains predatory early termination penalties." It recommends action: `renegotiate`. It estimates potential savings of `$45,000` by removing the penalty.
-
-### Step 3: Deterministic Policy Engine (The Safeguard)
-
-- The backend pure-Python logic intercepts the AI's output.
-- The organization's `approval_threshold_usd` is set to `$5,000`.
-- The AI's estimated financial impact is `$45,000`.
-- **Logic Eval:** $45,000 > $5,000.
-- **Result:** The system overrides any auto-execution. It flags `requires_approval = True` and sets the status to `Pending`.
-
-### Step 4: Human-in-the-loop (HITL)
-
-- An alert appears on the **Approvals** page.
-- The manager reviews the "Predatory Marketing Contract" decision.
-- The UI clearly splits the **AI Analysis** (LLM Output) from the **Policy Evaluation** (Deterministic Output) so the manager knows exactly *why* it was flagged.
-- The manager clicks **Approve**.
-
-### Step 5: Action Execution (MCP)
-
-- The approved decision generates a Draft Action payload.
-- On the **Actions** page, the user sees a draft Slack message targeting the Legal channel: *"High risk contract detected for Global Marketing Dynamics. Please review Clause 4 regarding a 30% termination penalty before signing."*
-- The user clicks **Send**. FinePrint uses the integrated Slack MCP server to securely post the message without the core backend needing to know how the Slack API works.
+**Contract → Risk → Decision → Approval → Action**
 
 ---
 
-## 🚀 Key Interview Talking Points
+# Architecture
 
-If you are presenting this project, emphasize these architectural decisions:
+Termora uses a decoupled architecture designed around reliability, auditability, and controlled AI execution.
 
-1. **AI Safety via Hybrid Architecture:** You didn't just build an "LLM wrapper." You built a system that uses AI for what it's good at (unstructured text understanding) but wraps it in a **deterministic policy engine** (if/else logic) for financial controls. The AI *suggests*, the rules engine *governs*, the human *approves*.
-2. **Model Context Protocol (MCP):** Using MCP for integrations demonstrates a forward-thinking architecture. Instead of hardcoding API keys for Slack, Jira, and Gmail, the application dynamically delegates execution to MCP servers.
-3. **Data Modeling & Auditability:** The presence of a dedicated immutable `AuditLog` table and the separation of `Contract` -> `Decision` -> `Action` models shows enterprise-grade system design.
-4. **UI/UX Separation of Concerns:** The frontend deliberately separates probabilistic data (AI confidence scores, extracted snippets) from deterministic data (policy rules passed/failed) to build user trust.
+```text
+                         ┌─────────────────────┐
+                         │      Termora UI     │
+                         │   Next.js / React   │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │      FastAPI        │
+                         │   Application API   │
+                         └──────────┬──────────┘
+                                    │
+                   ┌────────────────┼────────────────┐
+                   │                │                │
+                   ▼                ▼                ▼
+             ┌───────────┐   ┌─────────────┐   ┌───────────┐
+             │ Contracts │   │  Decisions  │   │  Policies │
+             └───────────┘   └─────────────┘   └───────────┘
+                   │                │                │
+                   └────────────────┼────────────────┘
+                                    ▼
+                         ┌─────────────────────┐
+                         │     LangGraph       │
+                         │   AI Workflow       │
+                         └──────────┬──────────┘
+                                    │
+                         ┌──────────▼──────────┐
+                         │ Deterministic Policy│
+                         │       Engine        │
+                         └──────────┬──────────┘
+                                    │
+                              HITL Approval
+                                    │
+                         ┌──────────▼──────────┐
+                         │      MCP Layer      │
+                         │ External Actions    │
+                         └─────────────────────┘
+```
+
+---
+
+# Technology Stack
+
+### Frontend
+
+* Next.js 14
+* React
+* Tailwind CSS
+* TypeScript
+
+The interface is designed around an enterprise SaaS experience with clear separation between:
+
+**AI-generated intelligence**
+
+and
+
+**deterministic governance decisions.**
+
+---
+
+### Backend
+
+* FastAPI
+* Python
+* SQLAlchemy
+* Pydantic
+
+The backend provides APIs for contracts, risks, decisions, approvals, actions, policies, and audit events.
+
+---
+
+### AI & Agents
+
+* LangGraph
+* LangChain
+* LLM-based contract analysis
+
+LangGraph orchestrates the contract analysis workflow as a controlled state machine rather than relying on a single unrestricted LLM call.
+
+---
+
+### Integrations
+
+Termora uses the **Model Context Protocol (MCP)** to connect AI workflows with external systems.
+
+This allows the platform to interact with tools such as:
+
+* Slack
+* Gmail
+* Jira
+* Other enterprise systems
+
+without tightly coupling the core application to every individual integration.
+
+---
+
+# AI + Deterministic Governance
+
+This is the core architectural principle behind Termora.
+
+LLMs are probabilistic.
+
+Financial and compliance controls should not be.
+
+Therefore:
+
+```text
+              AI
+               │
+               ▼
+       Understand Contract
+               │
+               ▼
+        Identify Risk
+               │
+               ▼
+      Estimate Financial Impact
+               │
+               ▼
+       Recommend Action
+               │
+               ▼
+      ┌──────────────────┐
+      │  Policy Engine   │
+      │                  │
+      │ Deterministic    │
+      │ Rules            │
+      └────────┬─────────┘
+               │
+        ┌──────┴───────┐
+        │              │
+        ▼              ▼
+     Allowed       Approval
+        │           Required
+        │              │
+        │              ▼
+        │        Human Review
+        │              │
+        └──────┬───────┘
+               ▼
+            Execute
+```
+
+This separation ensures that an LLM cannot independently authorize a financially significant action.
+
+---
+
+# Example
+
+## A $150,000 Marketing Contract
+
+A company uploads:
+
+```text
+high_risk_marketing_vendor.pdf
+```
+
+### Contract
+
+**Vendor:** Global Marketing Dynamics LLC
+
+**Annual Value:** $150,000
+
+Termora identifies:
+
+> **Clause 4:** Early termination requires payment of the remaining contract balance plus a 30% penalty.
+
+---
+
+### AI Analysis
+
+```text
+Risk Level:
+HIGH
+
+Risk Category:
+Termination
+
+Estimated Financial Exposure:
+$45,000
+
+Recommended Action:
+Renegotiate
+```
+
+---
+
+### Policy Evaluation
+
+Organization policy:
+
+```text
+approval_threshold_usd = $5,000
+```
+
+Termora evaluates:
+
+```text
+$45,000 > $5,000
+```
+
+Therefore:
+
+```text
+requires_approval = true
+status = "PENDING"
+```
+
+The AI cannot bypass this decision.
+
+---
+
+### Human Approval
+
+The manager opens the **Approvals** workspace.
+
+Termora displays two separate sections:
+
+**AI Analysis**
+
+* Risk identified
+* Supporting contract clause
+* Confidence
+* Estimated exposure
+* Recommended action
+
+**Policy Evaluation**
+
+* Applicable policy
+* Financial threshold
+* Evaluation result
+* Approval requirement
+
+The manager approves the action.
+
+---
+
+### Action
+
+Termora generates a draft internal notification:
+
+```text
+High-risk contract detected for Global Marketing
+Dynamics.
+
+Please review Clause 4 regarding the 30% early
+termination penalty before signing.
+```
+
+The user can then approve execution and send it through the configured MCP integration.
+
+---
+
+# Auditability
+
+Every important event is recorded.
+
+The system maintains an auditable chain:
+
+```text
+Contract
+   ↓
+Analysis
+   ↓
+Risk
+   ↓
+Decision
+   ↓
+Policy Evaluation
+   ↓
+Approval
+   ↓
+Action
+   ↓
+Execution
+```
+
+This makes it possible to answer:
+
+* What contract created the risk?
+* Which clause was identified?
+* What did the AI recommend?
+* What financial impact was estimated?
+* Which policy was applied?
+* Who approved the action?
+* What action was executed?
+* When did it happen?
+
+Termora treats **auditability as a first-class product requirement**, not an afterthought.
+
+---
+
+# Core Data Model
+
+The platform separates the major lifecycle entities:
+
+```text
+User
+ │
+ ├── Policies
+ │
+ └── Contracts
+       │
+       ├── Risks
+       │
+       └── Decisions
+              │
+              ├── Policy Evaluation
+              │
+              └── Actions
+                     │
+                     └── Execution
+
+AuditLog
+```
+
+This separation allows AI analysis, governance, approvals, and execution to remain independently traceable.
+
+---
+
+# Human-in-the-Loop
+
+Termora is designed around **controlled autonomy**, not unrestricted automation.
+
+The system can autonomously:
+
+* Read contracts
+* Extract information
+* Identify risks
+* Estimate exposure
+* Recommend actions
+* Prepare drafts
+
+But organizational policy determines when human intervention is mandatory.
+
+For example:
+
+```text
+Impact < $5,000
+        ↓
+Potentially eligible for automated workflow
+
+
+Impact ≥ $5,000
+        ↓
+Human approval required
+```
+
+This allows organizations to automate routine decisions while maintaining control over high-impact actions.
+
+---
+
+# Product Principles
+
+### Intelligence without blind trust
+
+AI provides analysis and recommendations, but does not become the final authority.
+
+### Automation with boundaries
+
+Termora automates workflows while respecting explicit organizational policies.
+
+### Explainable decisions
+
+Users should understand **why** something was flagged and **why** an approval was required.
+
+### Audit everything important
+
+Contract intelligence should produce an accountable decision trail.
+
+### Action, not just analysis
+
+The ultimate goal isn't another dashboard.
+
+It's turning contractual intelligence into controlled business action.
+
+---
+
+# Product Experience
+
+Termora is organized around the lifecycle of contractual risk.
+
+### Dashboard
+
+A high-level view of:
+
+* Active contracts
+* High-risk contracts
+* Upcoming renewals
+* Financial exposure
+* Pending approvals
+* Recent actions
+
+### Contracts
+
+Search and explore the organization's contract portfolio.
+
+### Risk Center
+
+Prioritize contractual risks based on:
+
+* Severity
+* Financial exposure
+* Deadline
+* Contract importance
+* Confidence
+
+### Approvals
+
+Review AI recommendations alongside deterministic policy evaluations.
+
+### Actions
+
+View proposed, approved, and executed actions.
+
+### Policies
+
+Configure organizational governance rules.
+
+### Audit Log
+
+Inspect the complete history of contract intelligence and actions.
+
+---
+
+# The Bigger Vision
+
+Termora isn't designed to be another PDF analyzer.
+
+The long-term vision is to become the **decision and governance layer for enterprise contracts**.
+
+A future Termora workflow looks like:
+
+```text
+New Contract
+     ↓
+Understand
+     ↓
+Monitor
+     ↓
+Detect
+     ↓
+Quantify
+     ↓
+Decide
+     ↓
+Govern
+     ↓
+Approve
+     ↓
+Act
+     ↓
+Audit
+```
+
+Instead of asking:
+
+> **"What does this contract say?"**
+
+Termora helps organizations answer:
+
+> **"What does this contract mean for our business, what should we do about it, and are we authorized to do it?"**
+
+---
+
+# Termora
+
+### Turn contracts into controlled decisions.
+
+**AI-powered contract intelligence.
+Deterministic governance.
+Human-controlled execution.**
