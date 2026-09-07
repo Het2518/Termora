@@ -1,16 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
+    // In production, NEXT_PUBLIC_API_URL points to Render backend
+    // In dev, falls back to localhost:8000
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
     return [
-    {
-      source: '/api/:path*',
-      destination: 'http://localhost:8000/:path*'
-    }];
+      {
+        source: '/api/:path*',
+        destination: `${apiUrl}/:path*`,
+      },
+    ];
   },
 
-  // Suppress the hydration-mismatch error OVERLAY caused by browser extensions
-  // injecting attributes (like bis_skin_checked) before React hydrates.
-  // The app still works correctly — this only hides the noisy red popup in dev.
   devIndicators: {
     buildActivityPosition: 'bottom-right',
   },
